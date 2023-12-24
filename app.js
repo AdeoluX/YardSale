@@ -21,6 +21,10 @@ app.use(fileUpload({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get("/", (req, res)=>{
+  res.send("I LOVE YOU ❤️❤️ ❤️❤️ BANKEBI AKINSOLA ❤️❤️ ❤️❤️, NEVER DOUBT IT!! ❤️❤️ ❤️❤️")
+})
+
 app.use("/api/v1/pay", paymentRoutes);
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/products", productsRoutes)
