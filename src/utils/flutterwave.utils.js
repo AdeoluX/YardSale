@@ -9,7 +9,7 @@ const initiateCharge = async ({amount, reference, meta, email}) => {
             email,
         },
         currency: "NGN",
-        redirect_url: "http://localhost:3004/api/v1/pay/call-back",
+        redirect_url: `${process.env.BASEURL}/api/v1/pay/call-back`,
         meta
     }
     console.log(data)
