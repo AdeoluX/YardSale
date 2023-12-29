@@ -13,7 +13,7 @@ const initiate = async ({auth, data}) => {
   session.startTransaction();
   try{
     const reference = `ELBAM_${generateRandomString(7)}`
-    const { product_id, quantity, address } = data
+    const { product_id, quantity, address, size, color } = data
     const {id} = auth
     const findProduct = await genericRepo.setOptions('Product', {
       condition: {_id: product_id}
@@ -30,7 +30,8 @@ const initiate = async ({auth, data}) => {
         amount,
         user: user._id,
         address,
-        quantity
+        quantity,
+        size,
       },
       transaction: {session}
     }).create()
