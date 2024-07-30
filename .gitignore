@@ -1,4 +1,5 @@
 node_modules/
 .serverless/
 serverless.yml
+azure-pipelines.yml
 .env
